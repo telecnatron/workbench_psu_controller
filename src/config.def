@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// Copyright Stephen Stebbing 2023. http://telecnatron.com/
+// -----------------------------------------------------------------------------
+#include "./lib/util/io.h"
+
+.version()
+
+.pin_def(LED, B, 5)
+.pin_def(FAN, C, 3)
+.pin_def(LOAD, C, 0)
+.pin_def(SHTDWN, D, 7)
+
+.inc_file(config.h.inc)
+
+.task(led)
+.task(clock)
+.task(load_switch)
+.task(lcd_init)
+.task(lcd_run, 0)
+.task(ina219)
+.task(energy)
+
+.mmp_cmd(ping)
+.mmp_cmd(version)
+.mmp_cmd(clock)
+#.mmp_cmd(pcf8574)
+#.mmp_cmd(lcd)
+#.mmp_cmd(ina219)
+.mmp_cmd(fan)
+.mmp_cmd(load_switch)
+.mmp_cmd(shtdwn)
+.mmp_cmd(measurements)
+
